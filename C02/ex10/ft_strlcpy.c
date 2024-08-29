@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 13:02:10 by itham             #+#    #+#             */
-/*   Updated: 2024/08/27 10:36:38 by itham            ###   ########.fr       */
+/*   Updated: 2024/08/29 13:10:50 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (src_len);
 }
 
-// int main(void)
-// {
-//     char dest[12];
-//     char src[] = "hello world";
+int main(void)
+{
+    char dest[12];
+    char src[] = "hello world";
 
-//     // Call ft_strlcpy and print the results
-//     unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
-//     printf("Output is : %u\n", len); // %u for unsigned int
-//     printf("Dest string is: %s\n", dest); // Print the destination string
+    // Call ft_strlcpy and print the results
+    unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
+    printf("Output is : %u\n", len); // %u for unsigned int
+    printf("Dest string is: %s\n", dest); // Print the destination string
 
-//     return 0;
-// }
+    return 0;
+}

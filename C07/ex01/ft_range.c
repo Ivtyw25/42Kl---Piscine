@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 11:21:16 by itham             #+#    #+#             */
-/*   Updated: 2024/08/29 13:10:26 by itham            ###   ########.fr       */
+/*   Created: 2024/08/29 13:21:24 by itham             #+#    #+#             */
+/*   Updated: 2024/08/29 14:06:17 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	*ft_range(int min, int max)
 {
+	int	*temp;
 	int	i;
+	int	size;
 
+	if (min >= max)
+		return (NULL);
+	size = max - min;
+	temp = (int *)malloc(sizeof(int) * (size));
+	if (!temp)
+		return (NULL);
 	i = 0;
-	while (src[i] != '\0')
+	while (i < size)
 	{
-		dest[i] = src[i];
+		temp[i] = min;
+		min++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (temp);
 }
 
 // int	main(void)
 // {
-
-// 	char	dest [] = "hello";
-// 	char	str [] = "hello world";
-
-// 	printf("%s", ft_strcpy(dest, str));
+// 	int	*temp = ft_range(1,9);
+// 	for (int i = 0; i < 8; i++)
+// 	{
+// 		printf("%d, ", temp[i]);
+// 	}
 // }

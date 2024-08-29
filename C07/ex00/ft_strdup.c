@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 11:21:16 by itham             #+#    #+#             */
-/*   Updated: 2024/08/29 13:10:26 by itham            ###   ########.fr       */
+/*   Created: 2024/08/29 12:27:19 by itham             #+#    #+#             */
+/*   Updated: 2024/08/29 12:51:35 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_len(char *src)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	while (src[i])
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
 
-// int	main(void)
+char	*ft_strdup(char *src)
+{
+	char	*temp;
+	int		i;
+
+	temp = (char *)malloc(sizeof(char) * ft_len(src));
+	if (!temp)
+		return (NULL);
+	else
+	{
+		i = 0;
+		while (src[i])
+		{
+			temp[i] = src[i];
+			i++;
+		}
+	}
+	return (temp);
+}
+
+// int main(void)
 // {
-
-// 	char	dest [] = "hello";
-// 	char	str [] = "hello world";
-
-// 	printf("%s", ft_strcpy(dest, str));
+//     char *str = ft_strdup("hello world");
+//     printf("%s", str);
 // }
