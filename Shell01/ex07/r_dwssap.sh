@@ -1,0 +1,1 @@
+cat /etc/passwd | awk '!/^#/' | awk -F: '{print $1}' | awk -v line1="$FT_LINE1" -v line2="$FT_LINE2" 'NR >= line1 && NR <= line2' | awk 'NR % 2 == 0' | rev | sort -r | paste -sd, - | awk '{print $0 "."}'
