@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 07:59:06 by itham             #+#    #+#             */
-/*   Updated: 2024/08/28 08:56:20 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/02 11:54:44 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	ft_atoi_base(char *str, char *base)
 
 // int main(void)
 // {
-// 	char *str = "af";
-// 	char *base = "0123456789abcdef";
+// 	char *str = "abc";
+// 	char *base = "0123456789abc";
 // 	printf("%d", ft_atoi_base(str, base));
 // 	}

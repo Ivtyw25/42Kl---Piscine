@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 12:27:19 by itham             #+#    #+#             */
-/*   Updated: 2024/08/29 12:51:35 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/02 07:18:04 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_len(char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])
@@ -29,7 +29,7 @@ char	*ft_strdup(char *src)
 	char	*temp;
 	int		i;
 
-	temp = (char *)malloc(sizeof(char) * ft_len(src));
+	temp = (char *)malloc(sizeof(char) * (ft_len(src) + 1));
 	if (!temp)
 		return (NULL);
 	else
@@ -41,6 +41,7 @@ char	*ft_strdup(char *src)
 			i++;
 		}
 	}
+	temp[i] = '\0';
 	return (temp);
 }
 

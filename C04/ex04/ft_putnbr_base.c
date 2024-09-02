@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 07:54:38 by itham             #+#    #+#             */
-/*   Updated: 2024/08/28 08:55:53 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/02 11:54:42 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void	ft_putnbr_base(int nbr, char *base)
 
 // int main(void)
 // {
-//     char arrr[] = "0123456789";
+//     char arrr[] = "0123456789abcdef";
 //     ft_putnbr_base(-123, arrr);
 // }

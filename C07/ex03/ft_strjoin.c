@@ -6,79 +6,85 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:40:38 by itham             #+#    #+#             */
-/*   Updated: 2024/08/29 16:16:28 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/02 12:32:33 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>  // For strlen function
 
-int ft_len(char *str) {
-    int i = 0;
-    while (str[i])
-        i++;
-    return i;
+int	ft_len(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-void ft_strcat(char *dest, const char *src) {
-    int i = 0;
-    while (dest[i] != '\0')
-        i++;
-    int j = 0;
-    while (src[j] != '\0') {
-        dest[i] = src[j];
-        i++;
-        j++;
-    }
-    dest[i] = '\0';
+int	compute_total_len(int size, char **strs, char *sep)
+{
+	int	total_len;
+	int	i;
+
+	i = 0;
+	total_len = 0;
+	while (i < size)
+	{
+		total_len += ft_len(strs[i]);
+		i++;
+	}
+	total_len = total_len + ((size -1) * ft_len(sep));
+	return (total_len);
 }
 
-void ft_change(char *temp, char **strs, int size, char *sep) {
-    int i = 0;
-    int pos = 0;
-    int seplen = ft_len(sep);
+void	ft_cpy(char *temp, char *str)
+{
+	int i;
 
-    while (i < size) {
-        int strlen = ft_len(strs[i]);
-        ft_strcat(temp + pos, strs[i]);
-        pos += strlen;
-
-        if (i < size - 1) {
-            ft_strcat(temp + pos, sep);
-            pos += seplen;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < ft_len(str))
+	{
+		temp[i] = str[i];
+		i++;
+	}
 }
 
-char *ft_strjoin(int size, char **strs, char *sep) {
-    if (size == 0) {
-        char *empty_str = (char *)malloc(sizeof(char));
-        if (empty_str) {
-            empty_str[0] = '\0';
-        }
-        return empty_str;
-    }
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char	*temp;
+	char	*string;
+	int		total_len;
+	int		i;
 
-    int ctr = 0;
-    int mallocSize = 0;
-    while (ctr < size) {
-        mallocSize += ft_len(strs[ctr]);
-        ctr++;
-    }
-    mallocSize += ft_len(sep) * (size - 1);  
-    char *temp = (char *)malloc(sizeof(char) * (mallocSize + 1));
-    if (!temp)
-        return NULL;
-
-    ft_change(temp, strs, size, sep);
-    return (temp);
+	if (size == 0)
+		return ((char *)malloc(sizeof(char)));
+	total_len = compute_total_len(size, strs, sep);
+	string = (char *)malloc(sizeof(char) * (total_len +1));
+	if (!string)
+		return (NULL);
+	temp = string;
+	i = -1;
+	while (++i < size)
+	{
+		ft_cpy(temp, strs[i]);
+		temp += ft_len(strs[i]);
+		if (i < size -1)
+		{
+			ft_cpy(temp, sep);
+			temp += ft_len(sep);
+		}
+	}
+	*temp = '\0';
+	return (string);
 }
 
-// int main(void) {
-//     char *str[] = {"", "hello", "", "world"};
+
+// int main(void) 
+// {
+//     char *str[] = {"hi", "hello", "hi", "world"};
 //     char *sep = "-";
 //     int size = 4;
 //     char *temp = ft_strjoin(size, str, sep);
