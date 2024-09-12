@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:14:01 by itham             #+#    #+#             */
-/*   Updated: 2024/08/28 11:59:01 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/12 11:20:43 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_is_prime(int nb)
 		return (1);
 	if (nb % 2 == 0 || nb % 3 == 0)
 		return (0);
-	start = 2;
+	start = 5;
 	while (start < nb / 2)
 	{
 		if (nb % start == 0)

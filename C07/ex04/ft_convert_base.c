@@ -6,7 +6,7 @@
 /*   By: itham <itham@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:20:50 by itham             #+#    #+#             */
-/*   Updated: 2024/09/02 11:45:49 by itham            ###   ########.fr       */
+/*   Updated: 2024/09/03 16:49:40 by itham            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 // int	main(void)
 // {
-// 	char *base_from = "012345";
+// 	char *base_from = "0";
 // 	char *base_to = "012345678";
 // 	char *nbr = "1234";
 // 	char *str = ft_convert_base(nbr, base_from, base_to);
