@@ -94,9 +94,9 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (addr);
 }
 
-int	main(void)
-{
-	char	*str = "hello world.	my name is	ivajhfsfidfjkdsfnsifjnsiofhsdlfn c ";
-	ft_print_memory(str, 31);
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	*str = "hello world.	my name is	ivajhfsfidfjkdsfnsifjnsiofhsdlfn c ";
+// 	ft_print_memory(str, 31);
+// 	return (0);
+// }
